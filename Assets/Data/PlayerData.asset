@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Speed: 10
-  MaxInventorySize: 0
+  MaxInventorySize: 9
   Attack: 1
   BulletSpeed: 40
   ReloadSpeed: 1.5
   MagazineAmmo: 30
   CurrentAmmo: 30
-  TotalAmmo: 120
+  TotalAmmo: 300
   HasSlow: 0
   CanIgnite: 0
   CanSmoke: 0

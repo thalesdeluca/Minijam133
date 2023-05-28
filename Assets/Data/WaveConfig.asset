@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85fd3016d5e4798867a8a0fa6746c0a, type: 3}
   m_Name: WaveConfig
   m_EditorClassIdentifier: 
-  ActualWave: -1
-  WaveTime: -0.0001613833
+  ActualWave: 0
+  WaveTime: 969.25543
   Settings:
   - GateNumber: 1
     SpawnDelay: 3
     DifficultyMultiplier: 1
-    TotalTime: 10
+    TotalTime: 1000
   - GateNumber: 2
     SpawnDelay: 4
     DifficultyMultiplier: 1

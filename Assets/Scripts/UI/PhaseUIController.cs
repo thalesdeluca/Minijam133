@@ -34,6 +34,5 @@ public class PhaseUIController : MonoBehaviour
     private void OnDisable()
     {
         _gameConfig.OnStateChanged.RemoveListener(OnStateChanged);
-
     }
 }

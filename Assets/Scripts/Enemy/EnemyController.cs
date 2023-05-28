@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private HealthController _healthController;
     private NavMeshAgent _agent;
     private EnemyData _data;
+    private bool _isDead;
 
     private void Awake()
     {
@@ -28,6 +29,8 @@ public class EnemyController : MonoBehaviour
 
     private void OnDie()
     {
+        _isDead = true;
+        StopAllCoroutines();
         foreach (var dropType in _data.Drops)
         {
             var drop = Instantiate<DropController>(_dropList.DropPrefab, transform.position, Quaternion.identity);
@@ -38,10 +41,12 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (_gameConfig.Player == null) return;
+        if (_gameConfig.Player == null || _isDead) return;
 
         if (_gameConfig.State != GameStates.Combat)
         {
+            _isDead = true;
+            StopAllCoroutines();
             Destroy(gameObject);
             return;
         }
@@ -52,7 +57,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider == null) return;
+        if (collision.collider == null || _isDead) return;
 
         foreach (var listener in collision.collider.GetComponents<IHit>())
         {
@@ -67,7 +72,7 @@ public class EnemyController : MonoBehaviour
     
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.collider == null) return;
+        if (collision.collider == null || _isDead) return;
 
         foreach (var listener in collision.collider.GetComponents<IHit>())
         {

@@ -15,6 +15,8 @@ public class PlaceController : MonoBehaviour
     private MeshRenderer _interactableMeshRenderer;
     private Material _previousMaterial;
     private int _lastIndexSelected = -1;
+    private bool _wasTrigger;
+    private Collider _collider;
 
     private void Update()
     {
@@ -76,6 +78,9 @@ public class PlaceController : MonoBehaviour
         _interactableHold = obj;
 
         _interactableMeshRenderer = obj.GetComponent<MeshRenderer>();
+        _collider = obj.GetComponent<Collider>();
+        _wasTrigger = _collider.isTrigger;
+        _collider.isTrigger = true;
         _previousMaterial = _interactableMeshRenderer.material;
         _interactableMeshRenderer.material = _previewMaterial;
     }
@@ -88,7 +93,8 @@ public class PlaceController : MonoBehaviour
         _interactableHold.transform.parent = null;
 
         _interactableHold.GetComponent<InteractableController>().Setup(_playerData.Instance.ItemSelected.Value);
-
+        _collider.isTrigger = _wasTrigger;
+        
         _playerData.Instance.PropsAvailable[_playerData.Instance.ItemIndexSelected] = null;
         _interactableHold = null;
         _interactableMeshRenderer = null;

@@ -40,7 +40,7 @@ Transform:
   m_Children:
   - {fileID: 4365960715408923086}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5656483080326258060
 MeshFilter:
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameConfig: {fileID: 11400000, guid: 35143d1f12ad3534897e4c6ed4c8fb78, type: 2}
   _healthController: {fileID: 1628063309580974706}
+  _playerData: {fileID: 11400000, guid: 6807746175cbedd43b7cdc66aeb9098e, type: 2}
 --- !u!114 &1628063309580974706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086ad6211e82425ca0dff646869f1d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  Health: 100
   _gameConfig: {fileID: 11400000, guid: 35143d1f12ad3534897e4c6ed4c8fb78, type: 2}
   OnDie:
     m_PersistentCalls:

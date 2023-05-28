@@ -9,7 +9,7 @@ public class HealthUIController : MonoBehaviour
     [SerializeField] private TMP_Text _healthText;
     [SerializeField] private PlayerData _playerData;
 
-    private void FixedUpdate()
+    private void Update()
     {
         _healthText.text = $"Health: {_playerData.Instance.Health}";
     }

@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (_healthController == null || _playerData.Instance) return;
+        if (_healthController == null || _playerData.Instance == null) return;
 
         _playerData.Instance.Health = _healthController.Health;
     }

@@ -39,9 +39,13 @@ public class HealthController : MonoBehaviour, IHit
         
         Health -= properties.Damage;
 
-        transform.DOKill();
-        transform.localScale = Vector3.one;
-        transform.DOPunchScale(new Vector3(1.1f, 1.1f, 1.1f), 0.2f);
+        if (properties.Damage > 0)
+        {
+            transform.DOKill();
+            transform.localScale = Vector3.one;
+            transform.DOPunchScale(new Vector3(1.1f, 1.1f, 1.1f), 0.2f);
+        }
+        
         StartCoroutine(WaitHitStop());
     }
     

@@ -28,6 +28,10 @@ public class DropController : MonoBehaviour
 
                 _playerData.Instance.Drops[_dropType]++;
             })
+            .OnComplete(() =>
+            {
+                Destroy(gameObject);
+            })
             .Play();
     }
 

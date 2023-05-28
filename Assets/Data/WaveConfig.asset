@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85fd3016d5e4798867a8a0fa6746c0a, type: 3}
+  m_Name: WaveConfig
+  m_EditorClassIdentifier: 
+  ActualWave: 0
+  WaveTime: 0
+  Settings:
+  - GateNumber: 1
+    TotalEnemies: 0
+    SpawnDelay: 2
+    DifficultyMultiplier: 1
+    TotalTime: 10
+  - GateNumber: 2
+    TotalEnemies: 0
+    SpawnDelay: 2
+    DifficultyMultiplier: 1
+    TotalTime: 20
+  - GateNumber: 2
+    TotalEnemies: 0
+    SpawnDelay: 1
+    DifficultyMultiplier: 1.15
+    TotalTime: 15
+  - GateNumber: 3
+    TotalEnemies: 0
+    SpawnDelay: 2
+    DifficultyMultiplier: 1.2
+    TotalTime: 20
+  - GateNumber: 3
+    TotalEnemies: 0
+    SpawnDelay: 1
+    DifficultyMultiplier: 1.5
+    TotalTime: 20
+  - GateNumber: 4
+    TotalEnemies: 0
+    SpawnDelay: 1
+    DifficultyMultiplier: 1
+    TotalTime: 45
+  - GateNumber: 4
+    TotalEnemies: 0
+    SpawnDelay: 2
+    DifficultyMultiplier: 1.5
+    TotalTime: 45
+  - GateNumber: 4
+    TotalEnemies: 0
+    SpawnDelay: 1.5
+    DifficultyMultiplier: 1.5
+    TotalTime: 60
+  - GateNumber: 4
+    TotalEnemies: 0
+    SpawnDelay: 3
+    DifficultyMultiplier: 2
+    TotalTime: 60
+  - GateNumber: 4
+    TotalEnemies: 0
+    SpawnDelay: 1
+    DifficultyMultiplier: 2
+    TotalTime: 60
+  - GateNumber: 4
+    TotalEnemies: 0
+    SpawnDelay: 1
+    DifficultyMultiplier: 2
+    TotalTime: 120
+  OnWaveStarted:
+    m_PersistentCalls:
+      m_Calls: []

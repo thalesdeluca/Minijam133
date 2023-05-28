@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20115cdb2c944a6681d5b6edeb200588, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  Health: 100
+  Speed: 10
+  MaxInventorySize: 0
+  Attack: 1
+  BulletSpeed: 30
+  ReloadSpeed: 3
+  MagazineAmmo: 30
+  CurrentAmmo: 30
+  TotalAmmo: 120
+  HasSlow: 0
+  CanIgnite: 0
+  CanSmoke: 0
+  AimPosition: {x: 13.567633, y: -0.45, z: -16.957024}
+  PropsAvailable:
+  - Type: 0
+    Health: 4
+    Damage: 0
+    Level: 1
+    IsObstacle: 1
+    IsSlowTrap: 0
+    IsFireTrap: 0
+  - Type: 0
+    Health: 4
+    Damage: 0
+    Level: 1
+    IsObstacle: 1
+    IsSlowTrap: 0
+    IsFireTrap: 0
+  ItemIndexSelected: 0

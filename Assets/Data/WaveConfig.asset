@@ -12,61 +12,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85fd3016d5e4798867a8a0fa6746c0a, type: 3}
   m_Name: WaveConfig
   m_EditorClassIdentifier: 
-  ActualWave: 0
-  WaveTime: 0
+  ActualWave: -1
+  WaveTime: -0.0001613833
   Settings:
   - GateNumber: 1
-    TotalEnemies: 0
-    SpawnDelay: 2
+    SpawnDelay: 3
     DifficultyMultiplier: 1
     TotalTime: 10
   - GateNumber: 2
-    TotalEnemies: 0
-    SpawnDelay: 2
+    SpawnDelay: 4
     DifficultyMultiplier: 1
     TotalTime: 20
   - GateNumber: 2
-    TotalEnemies: 0
-    SpawnDelay: 1
+    SpawnDelay: 2
     DifficultyMultiplier: 1.15
     TotalTime: 15
   - GateNumber: 3
-    TotalEnemies: 0
     SpawnDelay: 2
-    DifficultyMultiplier: 1.2
+    DifficultyMultiplier: 1.5
     TotalTime: 20
   - GateNumber: 3
-    TotalEnemies: 0
     SpawnDelay: 1
     DifficultyMultiplier: 1.5
     TotalTime: 20
   - GateNumber: 4
-    TotalEnemies: 0
     SpawnDelay: 1
     DifficultyMultiplier: 1
     TotalTime: 45
   - GateNumber: 4
-    TotalEnemies: 0
     SpawnDelay: 2
     DifficultyMultiplier: 1.5
     TotalTime: 45
   - GateNumber: 4
-    TotalEnemies: 0
     SpawnDelay: 1.5
     DifficultyMultiplier: 1.5
     TotalTime: 60
   - GateNumber: 4
-    TotalEnemies: 0
     SpawnDelay: 3
     DifficultyMultiplier: 2
     TotalTime: 60
   - GateNumber: 4
-    TotalEnemies: 0
     SpawnDelay: 1
     DifficultyMultiplier: 2
     TotalTime: 60
   - GateNumber: 4
-    TotalEnemies: 0
     SpawnDelay: 1
     DifficultyMultiplier: 2
     TotalTime: 120

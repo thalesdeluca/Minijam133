@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e677f1c64bd346929a2d3fce63a4b100, type: 3}
   m_Name: CrazyEnemy
   m_EditorClassIdentifier: 
-  Health: 10
-  Speed: 5
+  Health: 2
+  Speed: 3
   Damage: 2
   CanSlow: 0
   CanIgnite: 0

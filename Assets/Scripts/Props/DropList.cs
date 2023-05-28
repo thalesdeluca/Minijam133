@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DropList", menuName = "ScriptableObjects/Drops/DropList")]
@@ -8,6 +9,12 @@ public class DropList : ScriptableObject
 {
     public List<Drop> Drops;
     public List<Interactable> Interactables;
+    public DropController DropPrefab;
+
+    public Drop GetProp(DropType type)
+    {
+        return Drops.FirstOrDefault(e => e.Type == type);
+    }
 }
 
 [Serializable]

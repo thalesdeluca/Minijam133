@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _gameConfig.Player = transform;
+    }
+
+    private void Start()
+    {
+        _healthController.Setup(_playerData.Instance.Health, _playerData.InvincibilityTime);
         _healthController.OnDie.AddListener(OnPlayerDie);
     }
 

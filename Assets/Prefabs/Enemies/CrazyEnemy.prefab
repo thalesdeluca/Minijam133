@@ -153,6 +153,7 @@ MonoBehaviour:
   _gameConfig: {fileID: 11400000, guid: 35143d1f12ad3534897e4c6ed4c8fb78, type: 2}
   _baseData: {fileID: 11400000, guid: 7d405747cb4e28e429b36d1acfb6bc2b, type: 2}
   _waveConfig: {fileID: 11400000, guid: 8d7d1a84c221d7d4da592cdfabb43010, type: 2}
+  _dropList: {fileID: 11400000, guid: 2493c5ccc78c5db4285d356326bfbedb, type: 2}
 --- !u!114 &6860620782038020169
 MonoBehaviour:
   m_ObjectHideFlags: 0

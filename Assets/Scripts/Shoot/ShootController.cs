@@ -9,8 +9,7 @@ public class ShootController : MonoBehaviour
     [SerializeField] private PlayerData _playerData;
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private Transform _muzzle;
-
-    private bool _isReloading;
+    
     private void Update()
     {
         if (_gameConfig.State != GameStates.Combat)
@@ -18,23 +17,26 @@ public class ShootController : MonoBehaviour
             return;
         }
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !_playerData.Instance.IsReloading)
         {
             Shoot();
         }
 
-        if (Input.GetButton("Reload") && !_isReloading)
+        if (Input.GetButton("Reload") && !_playerData.Instance.IsReloading)
         {
+            if (_playerData.Instance.TotalAmmo <= 0 ||
+                _playerData.Instance.CurrentAmmo >= _playerData.Instance.MagazineAmmo) return;
+            
             StartCoroutine(WaitReloadTime());
         }
     }
 
     IEnumerator WaitReloadTime()
     {
-        _isReloading = true;
+        _playerData.Instance.IsReloading = true;
         yield return new WaitForSeconds(_playerData.Instance.ReloadSpeed);
         Reload();
-        _isReloading = false;
+        _playerData.Instance.IsReloading = false;
     }
 
     private void Reload()

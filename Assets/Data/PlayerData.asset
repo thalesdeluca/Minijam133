@@ -16,8 +16,8 @@ MonoBehaviour:
   Speed: 10
   MaxInventorySize: 0
   Attack: 1
-  BulletSpeed: 30
-  ReloadSpeed: 3
+  BulletSpeed: 40
+  ReloadSpeed: 1.5
   MagazineAmmo: 30
   CurrentAmmo: 30
   TotalAmmo: 120
@@ -25,19 +25,6 @@ MonoBehaviour:
   CanIgnite: 0
   CanSmoke: 0
   AimPosition: {x: 13.567633, y: -0.45, z: -16.957024}
-  PropsAvailable:
-  - Type: 0
-    Health: 4
-    Damage: 0
-    Level: 1
-    IsObstacle: 1
-    IsSlowTrap: 0
-    IsFireTrap: 0
-  - Type: 0
-    Health: 4
-    Damage: 0
-    Level: 1
-    IsObstacle: 1
-    IsSlowTrap: 0
-    IsFireTrap: 0
   ItemIndexSelected: 0
+  IsReloading: 0
+  InvincibilityTime: 0.5

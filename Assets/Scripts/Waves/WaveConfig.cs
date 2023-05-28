@@ -11,7 +11,7 @@ public class WaveConfig : ScriptableObject
     public int ActualWave;
     public float WaveTime;
     public List<WaveSettings> Settings;
-    public WaveSettings Wave => Settings.Count < ActualWave ? Settings[ActualWave] : Settings.Last();
+    public WaveSettings Wave => Settings.Count > ActualWave ? Settings[ActualWave] : Settings.Last();
     public UnityEvent OnWaveStarted;
 }
 

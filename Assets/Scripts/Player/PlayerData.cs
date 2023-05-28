@@ -43,6 +43,8 @@ public class PlayerData : ScriptableObject
 
     public bool CanCreateNewItems => PropsAvailable.Count < MaxInventorySize;
     public int ItemIndexSelected;
+    public bool IsReloading;
+    public float InvincibilityTime;
 
     public InteractableProperties? ItemSelected =>
         PropsAvailable.Count > ItemIndexSelected ? PropsAvailable[ItemIndexSelected] : null;

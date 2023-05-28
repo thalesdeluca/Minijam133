@@ -13,16 +13,11 @@ public class EnemySpawnerController : MonoBehaviour
 
     private float _spawnTime;
 
-    private void Awake()
-    {
-        _spawnTime = _waveConfig.Wave.SpawnDelay;
-    }
-
     private void FixedUpdate()
     {
         if (_gameConfig.State != GameStates.Combat) return;
 
-        _spawnTime -= Time.fixedTime;
+        _spawnTime -= Time.fixedDeltaTime;
         if (_spawnTime <= 0)
         {
             SpawnEnemy();
@@ -41,4 +36,19 @@ public class EnemySpawnerController : MonoBehaviour
         obj.transform.rotation = Quaternion.LookRotation((_gameConfig.Player.position - obj.transform.position).normalized);
     }
 
+    private void OnWaveStarted()
+    {
+        SpawnEnemy();
+        _spawnTime = _waveConfig.Wave.SpawnDelay;
+    }
+
+    private void OnEnable()
+    {
+        _waveConfig.OnWaveStarted.AddListener(OnWaveStarted);
+    }
+    
+    private void OnDisable()
+    {
+        _waveConfig.OnWaveStarted.RemoveListener(OnWaveStarted);
+    }
 }

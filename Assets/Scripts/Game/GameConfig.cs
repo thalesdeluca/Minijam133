@@ -11,6 +11,7 @@ public class GameConfig : ScriptableObject
 
     public GameStates State;
     public Transform Player;
+    public Transform DropTarget;
 
     public UnityEvent OnStateChanged;
 }

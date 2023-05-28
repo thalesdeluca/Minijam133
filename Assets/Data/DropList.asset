@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dfa07f6bac8412fb05bfd860170af04, type: 3}
   m_Name: DropList
   m_EditorClassIdentifier: 
-  Drops: []
+  Drops:
+  - Type: 0
+    Sprite: {fileID: 21300000, guid: 6a3259fef5aa08d42bc86870b13df54e, type: 3}
+  - Type: 1
+    Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - Type: 2
+    Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  - Type: 3
+    Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  - Type: 4
+    Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   Interactables:
   - Type: 0
     Prefab: {fileID: 1757365459248231000, guid: f49658607e69d8a43b9ee2c5b07d7762, type: 3}
@@ -20,3 +30,4 @@ MonoBehaviour:
     Prefab: {fileID: 5623444388161853349, guid: 3164be497046bc94ba5d21b27df9234e, type: 3}
   - Type: 2
     Prefab: {fileID: 4249730554380583274, guid: 331da4b39ce30614287c7ee67acb7267, type: 3}
+  DropPrefab: {fileID: 732035730043449186, guid: 0892a7a7969dfa4439ca605569e9be05, type: 3}

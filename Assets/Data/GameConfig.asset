@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd911ef22604d53946d6d9914a2145b, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  InvincibilityTime: 0.8
+  InvincibilityTime: 0.05
   HitStopTime: 0.15
   FireDamage: 1
   State: 2
   Player: {fileID: 0}
+  DropTarget: {fileID: 0}
   OnStateChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -32,4 +32,22 @@ public class PlayerController : MonoBehaviour
         _gameConfig.OnStateChanged?.Invoke();
         _healthController.OnDie.RemoveListener(OnPlayerDie);
     }
+
+    private void OnStateChanged()
+    {
+        if (_gameConfig.State != GameStates.Fuse) return;
+
+        _healthController.Health += 10;
+        _healthController.Health = Mathf.Clamp(_healthController.Health, 0f,100f);
+    }
+
+    private void OnEnable()
+    {
+        _gameConfig.OnStateChanged.AddListener(OnStateChanged);
+    }
+
+    private void OnDisable()
+    {
+        _gameConfig.OnStateChanged.AddListener(OnStateChanged);
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/Player/PlayerData", fileName = "PlayerData")]
@@ -41,13 +42,12 @@ public class PlayerData : ScriptableObject
     public List<InteractableProperties?> PropsAvailable = new List<InteractableProperties?>();
     public Dictionary<DropType, int> Drops = new Dictionary<DropType, int>();
 
-    public bool CanCreateNewItems => PropsAvailable.Count < MaxInventorySize;
+    public bool CanCreateNewItems => PropsAvailable.Where(e => e != null).ToList().Count < MaxInventorySize;
     public int ItemIndexSelected;
     public bool IsReloading;
     public float InvincibilityTime;
 
-    public InteractableProperties? ItemSelected =>
-        PropsAvailable.Count > ItemIndexSelected ? PropsAvailable[ItemIndexSelected] : null;
+    public InteractableProperties? ItemSelected => PropsAvailable[ItemIndexSelected];
 
     public void CreateInstance()
     {
@@ -67,35 +67,36 @@ public class PlayerData : ScriptableObject
         _instance.CanSmoke = CanSmoke;
         
         _instance.MaxInventorySize = MaxInventorySize;
-        _instance.PropsAvailable = new List<InteractableProperties?>(PropsAvailable.ToArray());
-        _instance.PropsAvailable.Add(new InteractableProperties()
-        {
-            Type = DropType.Shield,
-            Health = 4,
-            IsObstacle = true,
-            Level = 1
-        });
-        
-        _instance.PropsAvailable.Add(new InteractableProperties()
-        {
-            Type = DropType.Shield,
-            Health = 4,
-            IsObstacle = true,
-            Level = 1
-        });
-        
-        _instance.PropsAvailable.Add(new InteractableProperties()
-        {
-            Type = DropType.Fire,
-            Health = 0,
-            IsFireTrap = true,
-            Level = 1
-        });
+        // _instance.PropsAvailable = new List<InteractableProperties?>(PropsAvailable.ToArray());
+        // _instance.PropsAvailable.Add(new InteractableProperties()
+        // {
+        //     Type = DropType.Shield,
+        //     Health = 4,
+        //     IsObstacle = true,
+        //     Level = 1
+        // });
+        //
+        // _instance.PropsAvailable.Add(new InteractableProperties()
+        // {
+        //     Type = DropType.Shield,
+        //     Health = 4,
+        //     IsObstacle = true,
+        //     Level = 1
+        // });
+        //
+        // _instance.PropsAvailable.Add(new InteractableProperties()
+        // {
+        //     Type = DropType.Fire,
+        //     Health = 0,
+        //     IsFireTrap = true,
+        //     Level = 1
+        // });
 
-        
+        _instance.PropsAvailable = new List<InteractableProperties?>();
+        for (int i = 0; i < MaxInventorySize; i++)
+        {
+            _instance.PropsAvailable.Add(null);
+        }
         _instance.Drops = new Dictionary<DropType, int>(Drops);
-
-        // _instance.PropsAvailable.Clear();
-        // _instance.Drops.Clear();
     }
 }

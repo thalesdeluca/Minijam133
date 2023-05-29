@@ -11,6 +11,7 @@ public class HealthController : MonoBehaviour, IHit
     [SerializeField] private GameConfig _gameConfig;
 
     public UnityEvent OnDie;
+    public UnityEvent OnSlow;
 
     private bool _canBeHit = true;
     private bool _isOnFire = false;
@@ -30,11 +31,11 @@ public class HealthController : MonoBehaviour, IHit
         if (properties.HasSlow)
         {
             _isOnFire = false;
+            OnSlow?.Invoke();
         } 
 
         if (properties.CanIgnite)
         {
-            _isOnFire = true;
         }
         
         Health -= properties.Damage;
@@ -68,7 +69,11 @@ public class HealthController : MonoBehaviour, IHit
             transform.DOKill();
             OnDie?.Invoke();
             gameObject.SetActive(false);
-            StartCoroutine(WaitKill());
+
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(WaitKill());
+            }
         }
     }
 

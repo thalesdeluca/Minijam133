@@ -10,18 +10,20 @@ public struct PhaseText
 {
     public GameStates State;
     public string Text;
+    public string AuxiliaryText;
 }
 
 public class PhaseUIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
-
+    [SerializeField] private TMP_Text _descText;
     [SerializeField] private List<PhaseText> _phases;
     [SerializeField] private GameConfig _gameConfig;
     
     private void OnStateChanged()
     {
         _text.text = _phases[(int)_gameConfig.State].Text;
+        _descText.text = _phases[(int)_gameConfig.State].AuxiliaryText;
         _text.transform.localScale = Vector3.one;
         _text.transform.DOPunchScale(new Vector3(1.1f, 1.1f, 1.1f), 0.25f);
     }

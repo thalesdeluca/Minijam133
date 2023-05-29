@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CrazyEnemy
   m_EditorClassIdentifier: 
   Health: 2
-  Speed: 3
+  Speed: 4
   Damage: 2
   CanSlow: 0
   CanIgnite: 0
-  Drops: 000000000300000004000000
+  Drops: 0000000003000000040000000000000000000000

@@ -1,4 +1,5 @@
 ﻿
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -84,9 +85,11 @@ public class MergeCombinationController : MonoBehaviour
             
         var interactable = _dropList.GetInteractable(_combination.Resulting);
        
+        var availableSlot = _playerData.Instance.PropsAvailable.IndexOf(null);
 
-        _playerData.Instance.PropsAvailable.Add(new InteractableProperties()
+        _playerData.Instance.PropsAvailable.Insert(availableSlot, new InteractableProperties()
         {
+            Type = _combination.Resulting,
             IsObstacle = _combination.Resulting == DropType.Shield,
             IsFireTrap = _combination.Resulting == DropType.Fire,
             IsSlowTrap = _combination.Resulting == DropType.Water,

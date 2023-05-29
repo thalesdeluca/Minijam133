@@ -1,9 +1,7 @@
 ﻿
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Palmmedia.ReportGenerator.Core.Reporting.Builders;
-using Unity.VisualScripting;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -27,6 +25,7 @@ public class InteractableController : MonoBehaviour, IHit
     private bool _wasInitialized;
     private InteractableProperties _properties;
     private NavMeshObstacle _navMeshObstacle;
+    private Vector3 _originalScale;
 
     public void Setup(InteractableProperties properties)
     {
@@ -42,6 +41,8 @@ public class InteractableController : MonoBehaviour, IHit
         {
             transform.localScale = new Vector3(properties.Level, transform.localScale.y, properties.Level);
         }
+
+        _originalScale = transform.localScale;
     }
 
     private void FixedUpdate()
@@ -128,6 +129,13 @@ public class InteractableController : MonoBehaviour, IHit
         }
 
         _properties.Health -= properties.Damage;
+
+        if (properties.Damage > 0)
+        {
+            transform.DOKill();
+            transform.localScale = _originalScale;
+            transform.DOPunchScale(new Vector3(1.1f * _originalScale.x, 1.1f * _originalScale.y, 1.1f * _originalScale.z), 0.2f);
+        }
         StartCoroutine(WaitHit());
     }
 

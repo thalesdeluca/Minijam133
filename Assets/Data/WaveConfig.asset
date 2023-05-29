@@ -12,52 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85fd3016d5e4798867a8a0fa6746c0a, type: 3}
   m_Name: WaveConfig
   m_EditorClassIdentifier: 
-  ActualWave: 0
-  WaveTime: 969.25543
+  ActualWave: 3
+  WaveTime: -0.016833631
   Settings:
   - GateNumber: 1
     SpawnDelay: 3
     DifficultyMultiplier: 1
-    TotalTime: 1000
+    TotalTime: 10
   - GateNumber: 2
     SpawnDelay: 4
     DifficultyMultiplier: 1
     TotalTime: 20
   - GateNumber: 2
     SpawnDelay: 2
-    DifficultyMultiplier: 1.15
+    DifficultyMultiplier: 2
     TotalTime: 15
   - GateNumber: 3
     SpawnDelay: 2
-    DifficultyMultiplier: 1.5
+    DifficultyMultiplier: 2
     TotalTime: 20
   - GateNumber: 3
     SpawnDelay: 1
-    DifficultyMultiplier: 1.5
+    DifficultyMultiplier: 2
     TotalTime: 20
   - GateNumber: 4
     SpawnDelay: 1
-    DifficultyMultiplier: 1
+    DifficultyMultiplier: 2
     TotalTime: 45
   - GateNumber: 4
     SpawnDelay: 2
-    DifficultyMultiplier: 1.5
+    DifficultyMultiplier: 3
     TotalTime: 45
   - GateNumber: 4
     SpawnDelay: 1.5
-    DifficultyMultiplier: 1.5
+    DifficultyMultiplier: 3
     TotalTime: 60
   - GateNumber: 4
     SpawnDelay: 3
-    DifficultyMultiplier: 2
+    DifficultyMultiplier: 4
     TotalTime: 60
   - GateNumber: 4
     SpawnDelay: 1
-    DifficultyMultiplier: 2
+    DifficultyMultiplier: 4
     TotalTime: 60
   - GateNumber: 4
     SpawnDelay: 1
-    DifficultyMultiplier: 2
+    DifficultyMultiplier: 5
     TotalTime: 120
   OnWaveStarted:
     m_PersistentCalls:

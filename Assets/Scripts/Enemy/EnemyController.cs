@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
     private NavMeshAgent _agent;
     private EnemyData _data;
     private bool _isDead;
+    private bool _isSlowed;
+    private float _slowTime;
 
     private void Awake()
     {
@@ -25,6 +27,14 @@ public class EnemyController : MonoBehaviour
         _data = _baseData.CreateInstance();
         _healthController.Setup(_data.Health * _waveConfig.Wave.DifficultyMultiplier, _gameConfig.InvincibilityTime);
         _healthController.OnDie.AddListener(OnDie);
+        _healthController.OnSlow.AddListener(OnSlow);
+    }
+
+    private void OnSlow()
+    {
+        _isSlowed = true;
+        _slowTime = _gameConfig.SlowTime;
+        _data.Speed = _baseData.Speed * _gameConfig.SlowMultiplier;
     }
 
     private void OnDie()
@@ -50,6 +60,18 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        if (_isSlowed)
+        {
+            _slowTime -= Time.deltaTime;
+            if (_slowTime <= 0)
+            {
+                _slowTime = 0;
+                _isSlowed = false;
+                _data.Speed = _baseData.Speed;
+            }
+        }
+
 
         _agent.speed = _data.Speed * _waveConfig.Wave.DifficultyMultiplier;
         _agent.SetDestination(_gameConfig.Player.position);

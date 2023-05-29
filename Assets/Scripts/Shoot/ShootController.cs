@@ -9,7 +9,9 @@ public class ShootController : MonoBehaviour
     [SerializeField] private PlayerData _playerData;
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private Transform _muzzle;
-    
+    [SerializeField] private AudioClip _shootSfx;
+    [SerializeField] private AudioSource _source;
+     
     private void Update()
     {
         if (_gameConfig.State != GameStates.Combat)
@@ -51,6 +53,8 @@ public class ShootController : MonoBehaviour
             return;
         }
 
+        ammoAvailable -= _playerData.Instance.CurrentAmmo;
+
         _playerData.Instance.TotalAmmo -= ammoAvailable;
         
         var finalAmmo = Mathf.Clamp(ammoAvailable + _playerData.Instance.CurrentAmmo, 0, _playerData.Instance.MagazineAmmo);
@@ -76,7 +80,14 @@ public class ShootController : MonoBehaviour
                 CanIgnite = _playerData.Instance.CanIgnite,
                 CanSmoke = _playerData.Instance.CanSmoke
             });
-            // play shoot sound and animations
+            _source.PlayOneShot(_shootSfx);
+        }
+        else
+        {
+            if (_playerData.Instance.TotalAmmo <= 0 ||
+                _playerData.Instance.CurrentAmmo >= _playerData.Instance.MagazineAmmo) return;
+            
+            StartCoroutine(WaitReloadTime());
         }
     }
 }

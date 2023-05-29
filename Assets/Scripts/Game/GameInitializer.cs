@@ -10,7 +10,6 @@ public class GameInitializer : MonoBehaviour
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private Transform _dropTarget;
     [SerializeField] private WaveConfig WaveConfig;
-
     private void Awake()
     {
         Application.targetFrameRate = _frameRate;

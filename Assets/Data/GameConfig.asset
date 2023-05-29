@@ -18,6 +18,8 @@ MonoBehaviour:
   State: 2
   Player: {fileID: 0}
   DropTarget: {fileID: 0}
+  SlowTime: 1.5
+  SlowMultiplier: 0.5
   OnStateChanged:
     m_PersistentCalls:
       m_Calls: []

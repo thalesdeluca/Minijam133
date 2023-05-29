@@ -68,12 +68,13 @@ public class PlaceController : MonoBehaviour
             Destroy(_interactableHold);
         }
 
+        if (_playerData.Instance.ItemSelected == null) return;
+
         var drop = _dropList.Interactables.FirstOrDefault(item => item.Type == _playerData.Instance.ItemSelected.Value.Type);
         
         if (drop.Prefab == null) return;
 
         var obj = Instantiate(drop.Prefab, transform);
-        obj.transform.rotation = Quaternion.identity;
         obj.transform.localPosition = new Vector3(0, obj.transform.localPosition.y, _offset);
         _interactableHold = obj;
 
